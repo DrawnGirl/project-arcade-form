@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ClientArcade{% endblock %}
+
+{% block body %}
+    <h1>Nowy wpis</h1>
+
+    {{ include('client_arcade/_form.html.twig') }}
+
+    <a href="{{ path('app_client_arcade_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GameHero Lista{% endblock %}
+
+{% block body %}
+    <h1>Spis klientów salonu gier GameHero</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nazwa_klienta</th>
+                <th>Data</th>
+                <th>Godzina</th>
+                <th>Rezerwacja</th>
+                <th>Rodzaj_automatu_do_gry</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client_arcade in client_arcades %}
+            <tr>
+                <td>{{ client_arcade.id }}</td>
+                <td>{{ client_arcade.NazwaKlienta }}</td>
+                <td>{{ client_arcade.Data ? client_arcade.Data|date('Y-m-d') : '' }}</td>
+                <td>{{ client_arcade.Godzina ? client_arcade.Godzina|date('H:i:s') : '' }}</td>
+                <td>{{ client_arcade.Rezerwacja ? 'Yes' : 'No' }}</td>
+                <td>{{ client_arcade.RodzajAutomatuDoGry }}</td>
+                <td>
+                    <a href="{{ path('app_client_arcade_show', {'id': client_arcade.id}) }}">Szczegóły</a>
+                    <a href="{{ path('app_client_arcade_edit', {'id': client_arcade.id}) }}">Edytuj</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Nie znaleziono danych</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_client_arcade_new') }}">Dodaj klienta</a>
+{% endblock %}

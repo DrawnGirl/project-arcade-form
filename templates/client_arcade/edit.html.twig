@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ClientArcade{% endblock %}
+
+{% block body %}
+    <h1>Edycja klienta</h1>
+
+    {{ include('client_arcade/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_client_arcade_index') }}">back to list</a>
+
+    {{ include('client_arcade/_delete_form.html.twig') }}
+{% endblock %}
