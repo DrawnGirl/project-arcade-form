@@ -3,6 +3,13 @@
 {% block title %}GameHero Lista{% endblock %}
 
 {% block body %}
+<form method="post">
+    {% if app.user %}
+        <div class="mb-3">
+            Jesteś zalogowany jako {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Wyloguj</a>
+        </div>
+    {% endif %}
+
     <h1>Spis klientów salonu gier GameHero</h1>
 
     <table class="table">

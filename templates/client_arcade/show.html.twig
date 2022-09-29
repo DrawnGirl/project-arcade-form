@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ClientArcade{% endblock %}
+{% block title %}Dane o rezerwacji{% endblock %}
 
 {% block body %}
-    <h1>ClientArcade</h1>
+    <h1>Dane o rezerwacji</h1>
 
     <table class="table">
         <tbody>
@@ -34,9 +34,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_client_arcade_index') }}">back to list</a>
+    <a href="{{ path('app_client_arcade_index') }}">Powrót do listy</a>
 
-    <a href="{{ path('app_client_arcade_edit', {'id': client_arcade.id}) }}">edit</a>
+    <a href="{{ path('app_client_arcade_edit', {'id': client_arcade.id}) }}">Edycja</a>
 
     {{ include('client_arcade/_delete_form.html.twig') }}
 {% endblock %}

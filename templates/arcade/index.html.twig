@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ArcadeController!{% endblock %}
+{% block title %}GameHero{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Witamy na stronie GameHero!</h1>
 
-    This friendly message is coming from:
+    Na naszej stronie możesz:
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Iza/PhpstormProjects/project-arcade-form/src/Controller/ArcadeController.php'|file_link(0) }}">src/Controller/ArcadeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Iza/PhpstormProjects/project-arcade-form/templates/arcade/index.html.twig'|file_link(0) }}">templates/arcade/index.html.twig</a></code></li>
+        <li>Sprawdzic aktualne <code><a href="{{ path('app_client_arcade_index') }}">rezerwacje!</a></code></li>
+        <li>Zarejestrować się na naszej stronie! <code><a href="{{ path('app_register') }}">KLIK</a></code></li>
+        <li>Zalogowac się na swoje konto! <code><a href="{{ path('app_login') }}">KLIK</a></code></li>
     </ul>
 </div>
 {% endblock %}
